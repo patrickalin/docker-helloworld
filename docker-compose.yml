@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  helloworld:
+     image: tutum/hello-world
+     container_name: helloworld
+     ports:
+        - "86:80"
+     labels:
+        - traefik.frontend.rule=Host:helloworld.services.alin.be
+        - traefik.backend=helloworld
+        - traefik.frontend.entryPoints=http,https
+     networks:
+        - web
+
+networks:
+  web:
+    external:
+      name: traefik_webgateway
