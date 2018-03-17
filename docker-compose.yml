@@ -2,7 +2,7 @@ version: '3.5'
 
 services:
   helloworld:
-    image: helloworld-image
+    image: registry.services.alin.be/helloworld-alin:v1
     deploy:
       replicas: 1
       resources:
